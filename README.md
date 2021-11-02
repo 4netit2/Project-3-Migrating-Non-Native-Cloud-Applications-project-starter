@@ -61,11 +61,15 @@ You will need to install the following locally:
 ## Monthly Cost Analysis
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
-| Azure Resource | Service Tier | Monthly Cost |
-| ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+Azure App Service Basic - Estimated monthly cost $54.75
+Azure Service Bus Basic - Estimated monthly cost $0.00
+Azure Postgres Database	- Estimated monthly cost $138.47
+Azure Storage Standard  - Estimated monthly cost $21.84
+Azure Function Consumption - Estimated monthly cost $0.00
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+For the Function App, I choose the consumption plan type, also for Service Bus I choose Basic - they have estimated monthly cost $0.00. In the consumption plan you are charged for resources only when the function is up in running.For App Service I choose Basic because I consider that it includes everything we need to be able to test the application. Combining this two resources you can obtain good cost optimization. In Azure App Service scalability can be managed using a Web App. Azure Postgres was required for this project rubric. Standard plan is enough for storage.Because we don't have to maintain a VM this arhitecture is also profitable.
+In existing architecture,the web application is not scalable to manage the task of top users. When the administrator sends notifications, it currently takes a long time because it loops through all participants, resulting in some HTTP expiration exceptions thus the current architecture is not profitable.
+In current architecture,Azure Webapp and Azure Function can be easily scale up for certainly period of year and scale down when you don’t need too much resources. By using Service Bus Queue Trigger for sending emails to many recipients  this architecture becomes very cost effective comparing for example with a VM architecture. An advantage of using queues is that the senders and receivers  don't have to send and receive messages at the same time because messages are stored in the queue. Implementation of the backend API using Azure Function increase the speed for front-end app at high load and so the application response is much improved.
