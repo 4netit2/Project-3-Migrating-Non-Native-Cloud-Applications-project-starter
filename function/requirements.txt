@@ -1,0 +1,4 @@
+azure-functions
+azure-servicebus
+psycopg2-binary
+sendgrid

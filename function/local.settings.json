@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=True",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "notificationqueue_SERVICEBUS": "Endpoint=sb://review.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=EMSl+sY1I8wYZ0EJP9ysaB2pdxY7EPXFS5rJE2LvUY0=",
+    "review_SERVICEBUS": "Endpoint=sb://review.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=EMSl+sY1I8wYZ0EJP9ysaB2pdxY7EPXFS5rJE2LvUY0="
+  }
+}
